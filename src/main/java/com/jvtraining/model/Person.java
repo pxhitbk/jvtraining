@@ -14,13 +14,13 @@ package com.jvtraining.model;
 public class Person {
 	private Long id;
 	private String name;
-	private Sex gender;
+	private Gender gender;
 	private String carrer;
 
 	public Person() {
 	}
 
-	public Person(Long id, String name, Sex sex, String carrer) {
+	public Person(Long id, String name, Gender sex, String carrer) {
 		this.id = id;
 		this.name = name;
 		this.gender = sex;
@@ -43,11 +43,11 @@ public class Person {
 		this.name = name;
 	}
 
-	public Sex getGender() {
+	public Gender getGender() {
 		return gender;
 	}
 
-	public void setGender(Sex gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 

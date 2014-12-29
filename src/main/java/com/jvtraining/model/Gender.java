@@ -11,6 +11,6 @@ package com.jvtraining.model;
  * @author august
  *
  */
-public enum Sex {
+public enum Gender {
 	MALE, FEMALE
 }
