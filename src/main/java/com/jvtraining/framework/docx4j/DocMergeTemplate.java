@@ -76,7 +76,8 @@ public class DocMergeTemplate
 {
     static String dir;
     static String FONT_SIZE = "20";
-
+    static String GLOBAL_FONT = "Arial";//Times New Roman, Arial
+    
     static
     {
         dir = System.getProperty("user.dir") + "/template/";
@@ -101,7 +102,7 @@ public class DocMergeTemplate
         PgMar pg = factory.createSectPrPgMar();
         pg.setTop(BigInteger.valueOf(1));
 
-        //        setGlobalFontFamily("Times New Roman");
+        setGlobalFontFamily(GLOBAL_FONT);
 
         Tbl header = createHeaderTable();
         mainDoc().addObject(header);
@@ -111,11 +112,13 @@ public class DocMergeTemplate
         setTableWidth(footer, 8700);
         mainDoc().addObject(footer);
 
-        File docx = new File("template/HelloWord1.docx");
+        File docx = new File("test_doc.docx");
         wordMLPackage.save(docx);
+        System.out.println("Complete word");
         WordprocessingMLPackage wordMl = WordprocessingMLPackage.load(docx);
         //        PdfSettings pdfSettings = new PdfSettings();
         convertPdf(wordMl);
+        System.out.println("Complete pdf");
     }
 
     static void convertPdf(final WordprocessingMLPackage wordMl) throws Exception
@@ -133,7 +136,7 @@ public class DocMergeTemplate
             fontMapper.put("Times New Roman", font);
         }
 
-        OutputStream os = new FileOutputStream(new File("template/HellowWjrd1.pdf"));
+        OutputStream os = new FileOutputStream(new File("test_pdf.pdf"));
         Docx4J.toFO(foSettings, os, Docx4J.FLAG_EXPORT_PREFER_XSL);
 
         //      PdfConversion conversion = new Conversion(wordMl);
