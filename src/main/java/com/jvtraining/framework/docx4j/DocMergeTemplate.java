@@ -76,7 +76,7 @@ public class DocMergeTemplate
 {
     static String dir;
     static String FONT_SIZE = "20";
-    static String GLOBAL_FONT = "Arial";//Times New Roman, Arial
+    static String GLOBAL_FONT = "Arabic Newspaper";//Times New Roman, Arial
     
     static
     {
